@@ -15,6 +15,6 @@ class LLMService:
         response = ollama.chat(
             model=self.model,
             messages=[{"role": "user", "content": prompt}],
-            options={"temperature": temperature},
+            options={"temperature": temperature, "num_predict": 200},
         )
         return response["message"]["content"]

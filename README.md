@@ -1,3 +1,9 @@
+
+<p align="center">
+  <img src="docs/banner.png" alt="AI Research Paper Assistant Banner" width="100%">
+</p>
+
+
 # 📚 AI Research Paper Assistant
 
 <p align="center">

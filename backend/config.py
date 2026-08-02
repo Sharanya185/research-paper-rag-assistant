@@ -8,7 +8,7 @@ load_dotenv()
 
 @dataclass
 class Settings:
-    CHAT_MODEL: str = os.getenv("CHAT_MODEL", "llama3")
+    CHAT_MODEL: str = os.getenv("CHAT_MODEL", "llama3.2:3b")
     EMBED_MODEL: str = os.getenv("EMBED_MODEL", "nomic-embed-text")
     CHUNK_SIZE: int = int(os.getenv("CHUNK_SIZE", 220))
     CHUNK_OVERLAP: int = int(os.getenv("CHUNK_OVERLAP", 40))

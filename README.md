@@ -1,154 +1,349 @@
-📚 AI Research Paper Assistant
+# 📚 AI Research Paper Assistant
 
 <p align="center">
 
-<h3 align="center">
+# 🤖 AI-Powered Research Paper Understanding using RAG
 
-🤖 Retrieval-Augmented Generation (RAG) | FastAPI | Streamlit |Ollama | ChromaDB
-
-</h3>
+### Retrieval-Augmented Generation (RAG) • FastAPI • Streamlit • Ollama • ChromaDB
 
 </p>
 
 <p align="center">
+<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
+<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
+<img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/ChromaDB-6F42C1?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/RAG-LLM-blue?style=for-the-badge"/>
+</p>
 
-<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>{=html}<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>{=html}<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>{=html}<img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge"/>{=html}<img src="https://img.shields.io/badge/ChromaDB-6F42C1?style=for-the-badge"/>{=html}
+<p align="center">
+
+**Default LLM:** `llama3.2:3b`  
+**Embedding Model:** `nomic-embed-text`
 
 </p>
 
-Default Model: llama3.2:3b
+---
 
-🌟 Overview
+# 🌟 Overview
 
-AI Research Paper Assistant is a Retrieval-Augmented Generation (RAG)application that lets users upload research papers, generate summaries,ask questions, and understand complex concepts using a local LargeLanguage Model powered by Ollama.
+AI Research Paper Assistant is a **Retrieval-Augmented Generation (RAG)** application that enables users to interact with research papers using natural language.
 
-✨ Features
+Simply upload a research paper PDF and the assistant can:
 
-📄 Upload research papers (PDF)
+- 📄 Generate concise summaries
+- 💬 Answer questions from the document
+- 💡 Explain difficult concepts in simple language
+- 🧠 Maintain conversation history
+- 🔍 Retrieve relevant information using semantic search
 
-📝 AI-generated summaries
+Unlike a traditional chatbot, every response is generated using the uploaded document, making answers more accurate and context-aware.
 
-💬 Question answering from document context
+---
 
-💡 Explain difficult concepts
+# ✨ Features
 
-🧠 Conversation memory
+| Feature | Description |
+|----------|-------------|
+| 📄 PDF Upload | Upload research papers in PDF format |
+| 📝 AI Summary | Generate concise summaries of research papers |
+| 💬 Question Answering | Ask questions about the uploaded document |
+| 💡 Concept Explanation | Explain complex concepts in simple language |
+| 🧠 Conversation Memory | Maintains previous conversation context |
+| 🔍 Semantic Search | Retrieves the most relevant document chunks |
+| 📚 ChromaDB | Stores embeddings for efficient retrieval |
+| ⚡ Local LLM | Runs locally using Ollama |
 
-🔍 Semantic retrieval with embeddings
+---
 
-💾 ChromaDB vector storage
+# 📸 Screenshots
 
-⚡ Local inference using Ollama
+## 🏠 Home Screen
 
-🏗️ Architecture
+<p align="center">
+<img src="docs/home.png" width="900"/>
+</p>
 
-User
- │
- ▼
-Streamlit Frontend
- │
- ▼
-FastAPI Backend
- │
- ▼
-PDF Processing
- │
- ▼
-Chunking
- │
- ▼
-Embeddings (nomic-embed-text)
- │
- ▼
-ChromaDB
- │
- ▼
-Retriever
- │
- ▼
-Prompt Builder
- │
- ▼
-Ollama (llama3.2:3b)
- │
- ▼
-AI Response
+---
 
-🛠️ Tech Stack
+## 📄 Upload Research Paper
 
-Category         Technology
+<p align="center">
+<img src="docs/upload.png" width="900"/>
+</p>
 
-Backend          FastAPI, PythonFrontend         StreamlitLLM              Ollama + llama3.2:3bEmbeddings       nomic-embed-textVector DB        ChromaDBPDF Processing   PyPDFRetrieval        RAG
+---
 
-📂 Project Structure
+## 📝 AI Generated Summary
 
-backend/
- ├── api/
- ├── services/
- ├── models/
- ├── utils/
- ├── config.py
- └── main.py
-frontend/
- └── app.py
-chroma_db/
-README.md
+<p align="center">
+<img src="docs/summary.png" width="900"/>
+</p>
 
-⚙️ Workflow
+---
 
-Upload PDF.
+## 💬 Ask Questions
 
-Extract text.
+<p align="center">
+<img src="docs/chat.png" width="900"/>
+</p>
 
-Split into chunks.
+---
 
-Create embeddings.
+## 💡 Explain a Concept
 
-Store vectors in ChromaDB.
+<p align="center">
+<img src="docs/concept.png" width="900"/>
+</p>
 
-Retrieve relevant chunks.
+---
 
-Send context + question to llama3.2:3b.
+# 🏗️ System Architecture
 
-Generate grounded response.
+```text
+                     User
+                      │
+                      ▼
+             Streamlit Frontend
+                      │
+                      ▼
+              FastAPI Backend
+                      │
+                      ▼
+             Document Processing
+                      │
+                      ▼
+               Text Extraction
+                      │
+                      ▼
+                Text Chunking
+                      │
+                      ▼
+      Embedding Generation (nomic-embed-text)
+                      │
+                      ▼
+              ChromaDB Vector Store
+                      │
+                      ▼
+              Semantic Retrieval
+                      │
+                      ▼
+             Prompt Construction
+                      │
+                      ▼
+      Ollama (llama3.2:3b LLM)
+                      │
+                      ▼
+             AI Generated Response
+```
 
-🚀 Installation
+---
 
+# ⚙️ How It Works
+
+### 📄 Step 1 – Upload PDF
+
+The user uploads a research paper in PDF format.
+
+⬇️
+
+### 📑 Step 2 – Extract Text
+
+The application extracts text from every page of the PDF.
+
+⬇️
+
+### ✂️ Step 3 – Chunking
+
+The extracted text is divided into smaller overlapping chunks for efficient retrieval.
+
+⬇️
+
+### 🔢 Step 4 – Generate Embeddings
+
+Each chunk is converted into vector embeddings using:
+
+- **nomic-embed-text**
+
+⬇️
+
+### 🗄️ Step 5 – Store in ChromaDB
+
+The embeddings are stored in **ChromaDB**, enabling fast semantic search.
+
+⬇️
+
+### 🔍 Step 6 – Retrieve Relevant Chunks
+
+When a user asks a question or requests a summary, the system retrieves the most relevant chunks from ChromaDB.
+
+⬇️
+
+### 🤖 Step 7 – Generate Response
+
+The retrieved context is combined with the user's prompt and sent to:
+
+**llama3.2:3b (Ollama)**
+
+to generate an accurate, document-grounded response.
+
+---
+
+# 🛠️ Tech Stack
+
+| Category | Technology |
+|-----------|------------|
+| Programming Language | Python |
+| Backend | FastAPI |
+| Frontend | Streamlit |
+| LLM | Ollama (llama3.2:3b) |
+| Embedding Model | nomic-embed-text |
+| Vector Database | ChromaDB |
+| PDF Processing | PyPDF |
+| AI Technique | Retrieval-Augmented Generation (RAG) |
+
+---
+
+# 📂 Project Structure
+
+```text
+research-paper-rag-assistant
+│
+├── backend
+│   ├── api
+│   ├── services
+│   ├── models
+│   ├── utils
+│   ├── config.py
+│   └── main.py
+│
+├── frontend
+│   └── app.py
+│
+├── chroma_db
+│
+├── docs
+│   ├── home.png
+│   ├── upload.png
+│   ├── summary.png
+│   ├── chat.png
+│   └── explain.png
+│
+├── README.md
+│
+└── requirements.txt
+```
+
+---
+
+# 🚀 Getting Started
+
+## 1. Clone the Repository
+
+```bash
 git clone https://github.com/Sharanya185/research-paper-rag-assistant.git
+
 cd research-paper-rag-assistant
+```
 
+---
+
+## 2. Create a Virtual Environment
+
+```bash
 python -m venv venv
+
 venv\Scripts\activate
+```
 
+---
+
+## 3. Install Dependencies
+
+```bash
 pip install -r backend/requirements.txt
+
 pip install -r frontend/requirements.txt
+```
 
+---
+
+## 4. Install Ollama Models
+
+```bash
 ollama pull llama3.2:3b
+
 ollama pull nomic-embed-text
+```
 
+---
+
+## 5. Run Backend
+
+```bash
 python -m uvicorn backend.main:app --reload
-streamlit run frontend/app.py
+```
 
-Note: The default model is llama3.2:3b because it providesfaster inference and lower memory usage on laptops.
+Backend runs at:
 
-🔮 Future Improvements
+```text
+http://127.0.0.1:8000
+```
 
-Multiple PDF support
+---
 
-Source highlighting
+## 6. Run Frontend
 
-Citation support
+Open another terminal.
 
-Voice interaction
+```bash
+cd frontend
 
-Docker deployment
+streamlit run app.py
+```
 
-Cloud deployment
+Frontend runs at:
 
-👩‍💻 Author
+```text
+http://localhost:8501
+```
 
-Sharanya Rai K
+---
 
-GitHub: https://github.com/Sharanya185
+# 🚀 Future Improvements
 
-⭐ If you like this project, consider starring the repository!
+- 📑 Support multiple research papers
+- 🎤 Voice-based interaction
+- 📚 Automatic citation generation
+- 📊 Research paper comparison
+- 🌐 Docker support
+- ☁️ Cloud deployment
+- 📈 Improved retrieval using reranking models
+
+---
+
+# 👩‍💻 Author
+
+## **Sharanya Rai K**
+
+🎓 Artificial Intelligence & Machine Learning Engineering Student
+
+### Interests
+
+- Artificial Intelligence
+- Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- Generative AI
+- Machine Learning
+- Deep Learning
+
+GitHub: **https://github.com/Sharanya185**
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It motivates me to build and share more AI projects!

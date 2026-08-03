@@ -348,8 +348,4 @@ GitHub: **https://github.com/Sharanya185**
 
 ---
 
-# ⭐ Support
 
-If you found this project useful, please consider giving it a ⭐ on GitHub.
-
-It motivates me to build and share more AI projects!

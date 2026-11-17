@@ -317,9 +317,6 @@ http://localhost:8501
 
 ---
 
-## 🚀 Live Demo
-
-**Try the app:** [Research Paper RAG Assistant]https://research-paper-rag-assistant-vmclkdkzn84uzgqkhogu94.streamlit.app/
 
 
 # 🚀 Future Improvements
